@@ -5,7 +5,15 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        "manrope": ["manrope"]
+      },
+      colors: {
+        primary: "#0E2736",
+        secondary: "#07141C"
+      },
+    },
   },
   plugins: [],
 }
