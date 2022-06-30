@@ -13,22 +13,16 @@ interface NavbarProps {
 const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
 
   return (
-    <div className={`relative ${!isMinimized ? "w-64" : "w-16"} min-h-screen bg-gray-200 dark:bg-primary`}>
+    <div className={`relative ${!isMinimized ? "w-72" : "w-16"} min-h-screen bg-gray-200 dark:bg-primary`}>
       <div className='text-4xl text-slate-400 font-bold mx-auto my-2 w-fit'>viewLeague</div>
       <div className='flex p-3  items-center my-8'>
-        <div className='text-slate-200 '>
-          <AiTwotoneHome size={32} />
-        </div>
-        <div className='text-xl text-slate-400 pl-3'>Home</div>
-      </div>
-      <div className='flex p-3  items-center my-8'>
-        <div className='text-slate-200 '>
-          <GiBarbute size={32} />
-        </div>
-        <div className='text-xl text-slate-400 pl-3'>Champions</div>
+        <nav className='text-2xl items-center text-slate-400'>
+          <li className='flex'><AiTwotoneHome size={36} /> <a href="#" className='pl-5'>Home</a></li>
+          <li className='flex my-6'><GiBarbute size={36} /> <a href="#" className='pl-5'>Champions</a></li>
+        </nav>
       </div>
       <footer className="absolute bottom-2 flex min-w-full content-evenly px-2">
-        <button
+        <button 
           onClick={() => setIsDarkMode(!isDarkMode)}
           className="bg-zinc-100 dark:bg-secondary font-bold p-1 mr-auto rounded-md "
         >
