@@ -37,7 +37,7 @@ const Home: NextPage = () => {
                 onClick={() => setInputFocus(true)}
                 onBlur={() => setInputFocus(false)} />
               <Link href="/player">
-                <button className="bg-zinc-300 dark:bg-primary focus:bg-slate-600 font-bold h-5/6 my-auto mr-1 px-6 rounded-md hover:outline focus:outline focus:outline-2"
+                <button className="bg-zinc-300 dark:bg-primary focus:bg-slate-300 dark:focus:bg-slate-600 font-bold h-5/6 my-auto mr-1 px-6 rounded-md hover:outline  focus:outline focus:outline-2"
                   type="button"
                 >
                   Search
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
 
           </form>
           <div className="flex mx-auto">
-            <button className="bg-zinc-300 dark:bg-primary focus:bg-slate-600 font-semibold mx-auto p-2 rounded-md hover:outline active:outline active:outline-2">
+            <button className="bg-zinc-300 dark:bg-primary focus:bg-slate-300 dark:focus:bg-slate-600 font-semibold mx-auto p-2 rounded-md hover:outline focus:outline focus:outline-2">
               Region:
               <span className="font-bold text-sm">{` ${region.toUpperCase()}`}</span>
             </button>
