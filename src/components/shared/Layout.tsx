@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 
 export interface LayoutProps {
   children: React.ReactNode
-  className: string
+  className?: string
 }
 
 const Layout = (props: LayoutProps) => {
@@ -21,7 +21,7 @@ const Layout = (props: LayoutProps) => {
     }
   }, [isDarkMode])
   return (
-    <div className={props.className}>
+    <div className="min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex">
       <Navbar isMinimized={false} setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
       {props.children}
     </div>
