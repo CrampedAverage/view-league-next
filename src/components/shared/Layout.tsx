@@ -8,7 +8,7 @@ export interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const [minimiseNav, setMinimiseNav] = useState(false)
-  const [isDarkMode, setisDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(true)
 
   useEffect(() => {
     // || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -19,10 +19,10 @@ const Layout = (props: LayoutProps) => {
     } else {
       document.documentElement.classList.remove('dark')
     }
-  }, [])
+  }, [isDarkMode])
   return (
     <div className={props.className}>
-      <Navbar isMinimized={false} />
+      <Navbar isMinimized={false} setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
       {props.children}
     </div>
   )
