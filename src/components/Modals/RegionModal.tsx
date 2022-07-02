@@ -1,9 +1,21 @@
 import React from 'react'
+import Modal from './Modal'
 
-const RegionModal = () => {
+interface RegionModalProps {
+  closeModal: (arg0: string) => void
+}
+
+const RegionModal = ({ closeModal }: RegionModalProps) => {
+
+  const closeRegionModal = () => {
+    console.log("called")
+    closeModal("euw")
+  }
+
   return (
-    <div className="absolute border border-red min-w-screen-full">
-    </div>
+    <Modal closeModal={closeRegionModal}>
+
+    </Modal>
   )
 }
 

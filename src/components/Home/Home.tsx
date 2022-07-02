@@ -2,8 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import RegionModal from '../Modals/RegionModal'
-import useRegion from '../../hooks/useRegion'
 
 interface HomeProps {
   openModal: (arg: boolean) => void,
@@ -43,7 +41,7 @@ const Home = ({ openModal, region }: HomeProps) => {
             className="bg-zinc-300 dark:bg-primary focus:bg-slate-300 dark:focus:bg-slate-600 font-semibold mx-auto p-2 rounded-md hover:outline focus:outline focus:outline-2"
           >
             Region:
-            <span className="font-bold text-sm">{`${region.toUpperCase()}`}</span>
+            <span className="font-bold text-sm">{` ${region.toUpperCase()}`}</span>
           </button>
         </div>
       </div>

@@ -17,6 +17,7 @@ const HomePage: NextPage = () => {
 
   const closeModal = (region: string): void => {
     setRegion(region)
+    setShowRegionModal(false)
   }
 
   return (
@@ -27,7 +28,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Home openModal={openModal} region={region} />
-      {showRegionModal && <RegionModal />}
+      {showRegionModal && <RegionModal closeModal={closeModal} />}
     </Layout>
   )
 }
