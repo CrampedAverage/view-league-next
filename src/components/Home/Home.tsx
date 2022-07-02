@@ -2,17 +2,14 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import RegionModal from '../Modals/RegionModal'
 
-const Home = () => {
+interface HomeProps {
+  openModal: (arg: boolean) => void,
+  region: string
+}
+
+const Home = ({ openModal, region }: HomeProps) => {
   const [inputFocus, setInputFocus] = useState(false)
-  const [region, setRegion] = useState("euw")
-  const [showRegionModal, setShowRegionModal] = useState(true)
-
-  useEffect(() => {
-
-    localStorage.setItem("region", region)
-  }, [region])
 
   return (
     <div className="flex w-full">
@@ -40,14 +37,13 @@ const Home = () => {
         </form>
         <div className="flex mx-auto">
           <button
-            onClick={() => setShowRegionModal(true)}
+            onClick={() => openModal(true)}
             className="bg-zinc-300 dark:bg-primary focus:bg-slate-300 dark:focus:bg-slate-600 font-semibold mx-auto p-2 rounded-md hover:outline focus:outline focus:outline-2"
           >
             Region:
             <span className="font-bold text-sm">{` ${region.toUpperCase()}`}</span>
           </button>
         </div>
-        {showRegionModal && <RegionModal />}
       </div>
     </div>
   )
