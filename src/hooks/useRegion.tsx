@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import { regions } from '../utils/common'
+import { regions } from '../utils/commonData'
 
 const useRegion = (initialState: string | (() => string)): [string, Dispatch<SetStateAction<string>>] => {
   const [region, setRegion] = useState(initialState)

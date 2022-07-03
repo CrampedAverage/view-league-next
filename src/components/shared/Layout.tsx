@@ -9,7 +9,7 @@ export interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   const [minimiseNav, setMinimiseNav] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useDarkMode(true)
+  const [isDarkMode, setIsDarkMode] = useDarkMode()
 
   return (
     <div className="min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex">
