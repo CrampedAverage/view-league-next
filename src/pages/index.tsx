@@ -8,7 +8,7 @@ import useModal from '../hooks/useModal'
 import useRegion from '../hooks/useRegion'
 
 const HomePage: NextPage = () => {
-  const [showRegionModal, setShowRegionModal] = useModal(true)
+  const [showRegionModal, setShowRegionModal] = useModal(false)
   const [region, setRegion] = useRegion("euw")
 
   const openModal = (open: boolean): void => {

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { GiBarbute } from "react-icons/gi";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsFillSunFill, BsMoonFill } from "react-icons/bs"
@@ -17,8 +18,17 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
       <div className='text-4xl text-slate-400 font-bold mx-auto my-2 w-fit'>viewLeague</div>
       <div className='flex p-3  items-center my-8'>
         <nav className='text-2xl items-center text-slate-400'>
-          <li className='flex'><AiTwotoneHome size={36} /> <a href="#" className='pl-5'>Home</a></li>
-          <li className='flex my-6'><GiBarbute size={36} /> <a href="#" className='pl-5'>Champions</a></li>
+          <li className='flex'><AiTwotoneHome size={36} /> 
+            <Link href="/">
+              <p>Home</p> 
+            </Link> 
+          </li>
+          <li className='flex my-6'>
+          <GiBarbute size={36}/>
+            <Link href="/champions">
+              <p>Champions</p>
+            </Link>
+          </li>
         </nav>
       </div>
       <footer className="absolute bottom-2 flex min-w-full content-evenly px-2">
