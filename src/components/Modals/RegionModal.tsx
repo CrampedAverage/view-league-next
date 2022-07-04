@@ -28,7 +28,7 @@ const RegionModal = ({ closeModal, region }: RegionModalProps) => {
             const regionData = regions[regionKey]
             return (
               <li
-                className={`w-2/6 cursor-pointer mx-auto flex my-1 rounded-lg ${regionValue == regionKey ? "bg-secondary" : ""}`}
+                className={`w-1/2 cursor-pointer mx-auto flex my-1 rounded-lg ${regionValue == regionKey ? "bg-secondary" : ""}`}
                 key={regionKey}
               >
                 <input
