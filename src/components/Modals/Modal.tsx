@@ -17,7 +17,7 @@ const Modal = ({ children, closeModal }: ModalProps) => {
 
   return (
     <div className="absolute min-w-full min-h-full flex items-center " onClick={handleOutsideClick}>
-      <div className="bg-gray-200 dark:bg-primary rounded mx-auto flex-col px-6 py-3 " style={{ width: "468px", height: "468px" }} ref={modalView}>
+      <div className="bg-gray-200 dark:bg-primary rounded mx-auto flex-col px-6 py-3 w-96 h-96" ref={modalView}>
         {children}
       </div>
     </div>
