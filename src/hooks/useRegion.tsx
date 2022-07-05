@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import Cookies from 'js-cookie'
 import { regions } from '../utils/commonData'
 
 const useRegion = (initialState: string | (() => string)): [string, Dispatch<SetStateAction<string>>] => {
@@ -8,7 +9,7 @@ const useRegion = (initialState: string | (() => string)): [string, Dispatch<Set
     if (!Object.keys(regions).includes(region)) {
       return setRegion("euw")
     }
-    localStorage.setItem("region", region)
+    Cookies.set("region", region, { expires: 7 })
   }, [region])
 
   return [region, setRegion]
