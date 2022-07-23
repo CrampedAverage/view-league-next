@@ -67,7 +67,7 @@ export async function getUserRanks<T>(regionValue: IRegionValue, summonerID: str
  * MATCH-V5 - Get a list of match ids by puuid
  * @param {string} continent
  * @param {uuid} puuid
- * @param {int} end
+ * @param {int} numOfGames
  * @returns list of match ids
  */
 export async function getMatchIDs(continent: IContinent, puuid: string, numOfGames = 10): Promise<number[]> {
