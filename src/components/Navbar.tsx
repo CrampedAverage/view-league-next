@@ -15,16 +15,17 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
 
   return (
     <div className={`relative ${!isMinimized ? "w-72" : "w-16"} min-h-screen bg-gray-200 dark:bg-primary`}>
-      <div className='text-4xl text-slate-400 font-bold mx-auto my-2 w-fit'>viewLeague</div>
+      <div className='text-4xl font-bold mx-auto my-2 w-fit'>viewLeague</div>
       <div className='flex p-3  items-center my-8'>
-        <nav className='text-2xl items-center text-slate-400'>
-          <li className='flex'><AiTwotoneHome size={36} /> 
+        <nav className='text-2xl items-center'>
+          <li className='flex cursor-pointer'>
+            <AiTwotoneHome size={36} className="mr-3" />
             <Link href="/">
-              <p>Home</p> 
-            </Link> 
+              <p>Home</p>
+            </Link>
           </li>
-          <li className='flex my-6'>
-          <GiBarbute size={36}/>
+          <li className='flex my-6 cursor-pointer'>
+            <GiBarbute size={36} className="mr-3" />
             <Link href="/champions">
               <p>Champions</p>
             </Link>
@@ -32,7 +33,7 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
         </nav>
       </div>
       <footer className="absolute bottom-2 flex min-w-full content-evenly px-2">
-        <button 
+        <button
           onClick={() => setIsDarkMode(!isDarkMode)}
           className="bg-zinc-100 dark:bg-secondary font-bold p-1 mr-auto rounded-md "
         >

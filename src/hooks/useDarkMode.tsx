@@ -17,7 +17,7 @@ const useDarkMode = (): [boolean, Dispatch<SetStateAction<boolean>>] => {
     const getInitialDarkMode = () => {
       return !('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches
     }
-    setIsDarkMode(getInitialDarkMode)
+    setIsDarkMode(getInitialDarkMode())
   }, [])
   return [isDarkMode, setIsDarkMode]
 }
