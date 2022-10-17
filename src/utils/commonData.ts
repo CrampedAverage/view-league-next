@@ -1,59 +1,46 @@
-import { IRegions } from "../types/types";
-
-export const regions: IRegions = {
+export const regions = {
   euw: {
     value: "euw1",
-    regionName: "Europe",
-    continent: "EUROPE"
+    regionName: "Europe"
   },
   eune: {
     value: "eun1",
-    regionName: "Europe Nordic",
-    continent: "EUROPE"
+    regionName: "Europe Nordic"
   },
   na: {
     value: "na1",
-    regionName: "North America",
-    continent: "AMERICAS"
+    regionName: "North America"
   },
   jp: {
     value: "jp1",
-    regionName: "Japan",
-    continent: "ASIA"
+    regionName: "Japan"
   },
   lan: {
     value: "la1",
-    regionName: "LAN",
-    continent: "AMERICAS"
+    regionName: "LAN"
   },
   las: {
     value: "la2",
-    regionName: "LAS",
-    continent: "AMERICAS"
+    regionName: "LAS"
   },
   oce: {
     value: "oc1",
-    regionName: "Oceania",
-    continent: "SEA"
+    regionName: "Oceania"
   },
   kr: {
     value: "kr",
-    regionName: "Korea",
-    continent: "ASIA"
+    regionName: "Korea"
   },
   ru: {
     value: "ru1",
-    regionName: "Russia",
-    continent: "EUROPE"
+    regionName: "Russia"
   },
   tr: {
     value: "tr1",
-    regionName: "Turkey",
-    continent: "EUROPE"
+    regionName: "Turkey"
   },
   br: {
     value: "br1",
-    regionName: "Brazil",
-    continent: "AMERICAS"
+    regionName: "Brazil"
   },
 }
