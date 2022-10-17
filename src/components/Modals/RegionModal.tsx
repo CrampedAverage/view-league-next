@@ -8,25 +8,27 @@ interface RegionModalProps {
   region: string
 }
 
+type RegionKey = keyof typeof regions
+
 const RegionModal = ({ closeModal, region }: RegionModalProps) => {
   const [regionValue, setRegionValue] = useState(region)
 
   return (
     <Modal closeModal={closeModal}>
-      <header className="relative flex ">
+      <header className="relative flex text-slate-400 ">
         <h2 className="mx-auto font-bold text-2xl">Regions</h2>
         <button className="absolute right-0 top-0 cursor-pointer" onClick={() => closeModal()}>
           <FaWindowClose size={32} />
         </button>
       </header>
-      <form className="flex-grow   justify-center items-center mt-3">
+      <form className="flex-grow text-slate-400 justify-center items-center mt-3">
         <ul className="flex flex-wrap justify-center items-end  box-border h-64">
           {Object.keys(regions).map(region => {
-            const regionKey = region
+            const regionKey = region as RegionKey
             const regionData = regions[regionKey]
             return (
               <li
-                className={`w-1/2 cursor-pointer mx-auto flex my-1 rounded-lg ${regionValue == regionKey ? "bg-secondary" : ""}`}
+                className={`w-2/6 cursor-pointer mx-auto flex my-1 rounded-lg ${regionValue == regionKey ? "bg-secondary" : ""}`}
                 key={regionKey}
               >
                 <input
