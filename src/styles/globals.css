@@ -13,9 +13,8 @@ a {
   text-decoration: none;
 }
 
-body {
+* {
   box-sizing: border-box;
-  @apply text-slate-400
 }
 
 @tailwind base;
