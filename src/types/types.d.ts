@@ -40,10 +40,24 @@ export type IRegionValue =
   | "tr1"
   | "br1";
 
+export type IRegion =
+  | "euw"
+  | "eun"
+  | "na"
+  | "jp"
+  | "la"
+  | "la"
+  | "oc"
+  | "kr"
+  | "ru"
+  | "tr"
+  | "br"
+  | string;
+
 export type IContinent = "EUROPE" | "AMERICAS" | "ASIA" | "SEA";
 
 export interface IRegions {
-  [key: string]: {
+  [key: IRegion]: {
     value: IRegionValue;
     regionName: string;
     continent: IContinent;
