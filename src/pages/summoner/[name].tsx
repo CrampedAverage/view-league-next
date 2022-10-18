@@ -35,8 +35,8 @@ interface IParams {
 
 export async function getStaticProps({ params }: IParams) {
   const region = Cookies.get("region") || "euw";
-  const { value: regionValue, continent } = regions[region];
-
+  const { value: regionValue, continent } =
+    regions[region as keyof typeof regions];
   const { name } = params;
   const summonerIDs = await getSummonerIDs<ISummonerIDs>(regionValue, name);
   const { id, puuid } = summonerIDs;
