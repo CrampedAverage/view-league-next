@@ -1,6 +1,7 @@
 import axios from "axios";
 import { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { type } from "os";
 import React, { useEffect, useState } from "react";
 import Home from "../../components/Home/Home";
@@ -20,13 +21,10 @@ interface TChampionList {
 }
 
 interface ChampionsProp {
-  championsList: TChampionList;
+  championList: TChampionList;
 }
 
-const Champions = ({ championsList }: ChampionsProp) => {
-  useEffect(() => {
-    console.log(championsList);
-  });
+const Champions: NextPage<ChampionsProp> = ({ championList }) => {
   return (
     <Layout>
       <Head>
@@ -38,13 +36,17 @@ const Champions = ({ championsList }: ChampionsProp) => {
         <p className="text-center text-5xl">Champions</p>
         <p className="text-center text-2xl">click for champion info</p>
         <ul className="flex flex-wrap p-6 justify-center ">
-          {Object.values(championsList.data).map((champion: TChampion) => {
+          {Object.values(championList.data).map((champion: TChampion) => {
             return (
-              <li className="flex-col w-28 h-28 border-2 border-solid dark:border-primary m-5">
-                <img
-                  className="w-full h-4/5"
-                  src={`http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion.image.full}`}
-                ></img>
+              <li
+                className="flex-col w-28 h-28 border-2 border-solid dark:border-primary m-5"
+                key={champion.name}
+              >
+                <Image
+                  className="w-full h-4/5 relative"
+                  layout="fill"
+                  src={`http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion.image?.full}`}
+                />
                 <p className="text-center overflow-ellipsis">{champion.name}</p>
               </li>
             );
@@ -60,7 +62,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      championsList: championList,
+      championList,
     },
   };
 }
