@@ -1,7 +1,7 @@
 import axios, { AxiosPromise, AxiosResponse } from "axios";
 import { IContinent, IRegionValue, ISummonerIDs } from "../types/types";
 
-const apiKey = process.env.RIOT_API_KEY
+const apiKey = process.env.RIOT_API_KEY;
 
 // export async function getVersion() {
 //   const url = "https://ddragon.leagueoflegends.com/api/versions.json";
@@ -43,11 +43,13 @@ const apiKey = process.env.RIOT_API_KEY
  * @param {any} sumName
  * @returns User's info and uuids
  */
-export async function getSummonerIDs<T>(regionValue: IRegionValue, summonerName: string): Promise<T> {
+export async function getSummonerIDs<T>(
+  regionValue: IRegionValue,
+  summonerName: string
+): Promise<T> {
   const url = `https://${regionValue}.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${apiKey}`;
   const response = await axios.get<T>(url);
   return response.data;
-
 }
 
 /**
@@ -56,11 +58,13 @@ export async function getSummonerIDs<T>(regionValue: IRegionValue, summonerName:
  * @param {string} sumID
  * @returns Array of user's rank info
  */
-export async function getUserRanks<T>(regionValue: IRegionValue, summonerID: string): Promise<T> {
+export async function getUserRanks<T>(
+  regionValue: IRegionValue,
+  summonerID: string
+): Promise<T> {
   const url = `https://${regionValue}.api.riotgames.com/lol/league/v4/entries/by-summoner/${summonerID}?api_key=${apiKey}`;
   const response = await axios.get<T>(url);
   return response.data;
-
 }
 
 /**
@@ -70,7 +74,11 @@ export async function getUserRanks<T>(regionValue: IRegionValue, summonerID: str
  * @param {int} end
  * @returns list of match ids
  */
-export async function getMatchIDs(continent: IContinent, puuid: string, numOfGames = 10): Promise<number[]> {
+export async function getMatchIDs(
+  continent: IContinent,
+  puuid: string,
+  numOfGames = 10
+): Promise<number[]> {
   const url = `https://${continent}.api.riotgames.com/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=${numOfGames}&api_key=${apiKey}`;
   const response = await axios.get(url);
   return response.data;
@@ -87,4 +95,3 @@ export async function getMatchIDs(continent: IContinent, puuid: string, numOfGam
 //   const data = await axios.get(url);
 //   return data;
 // }
-
