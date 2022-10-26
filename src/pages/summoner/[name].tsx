@@ -13,7 +13,7 @@ interface SummonerPageProps {
   data: ISummonerData;
 }
 
-const SummonerPage = ({ data }: SummonerPageProps) => {
+const SummonerPage: NextPage<SummonerPageProps> = ({ data }) => {
   const router = useRouter();
   const { name } = router.query;
 
