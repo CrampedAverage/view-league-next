@@ -1,38 +1,44 @@
-import React from 'react'
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
 import { GiBarbute } from "react-icons/gi";
 import { AiTwotoneHome } from "react-icons/ai";
-import { BsFillSunFill, BsMoonFill } from "react-icons/bs"
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa"
+import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 interface NavbarProps {
-  isMinimized: boolean,
-  isDarkMode: boolean,
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>
+  isMinimized: boolean;
+  isDarkMode: boolean;
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
-
   return (
-    <div className={`relative ${!isMinimized ? "w-72" : "w-16"} min-h-screen bg-gray-200 dark:bg-primary`}>
-      <div className='text-4xl text-slate-400 font-bold mx-auto my-2 w-fit'>viewLeague</div>
-      <div className='flex p-3  items-center my-8'>
-        <nav className='text-2xl items-center text-slate-400'>
-          <li className='flex'><AiTwotoneHome size={36} /> 
+    <div
+      className={`relative ${
+        !isMinimized ? "w-72" : "w-16"
+      } min-h-screen bg-gray-200 dark:bg-primary`}
+    >
+      <div className="text-4xl text-slate-400 font-bold mx-auto my-2 w-fit">
+        viewLeague
+      </div>
+      <div className="flex p-3  items-center my-8">
+        <nav className="text-2xl items-center text-slate-400">
+          <li className="flex cursor-pointer my-3">
+            <AiTwotoneHome size={36} />
             <Link href="/">
-              <p>Home</p> 
-            </Link> 
+              <p className="px-4 ">Home</p>
+            </Link>
           </li>
-          <li className='flex my-6'>
-          <GiBarbute size={36}/>
+          <li className="flex my-6 cursor-pointer">
+            <GiBarbute size={36} />
             <Link href="/champions">
-              <p>Champions</p>
+              <p className="px-4">Champions</p>
             </Link>
           </li>
         </nav>
       </div>
       <footer className="absolute bottom-2 flex min-w-full content-evenly px-2">
-        <button 
+        <button
           onClick={() => setIsDarkMode(!isDarkMode)}
           className="bg-zinc-100 dark:bg-secondary font-bold p-1 mr-auto rounded-md "
         >
@@ -46,8 +52,8 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
           <FaLongArrowAltLeft size={32} color={isDarkMode ? "white" : ""} />
         </button>
       </footer>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
