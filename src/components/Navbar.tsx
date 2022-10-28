@@ -25,14 +25,14 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
         <nav className="text-2xl items-center text-slate-400">
           <li className="flex cursor-pointer my-3">
             <AiTwotoneHome size={36} />
-            <Link href="/">
-              <p className="px-4 ">Home</p>
+            <Link href="/" className="px-4 ">
+              Home
             </Link>
           </li>
           <li className="flex my-6 cursor-pointer">
             <GiBarbute size={36} />
-            <Link href="/champions">
-              <p className="px-4">Champions</p>
+            <Link href="/champions" className="px-4">
+              Champions
             </Link>
           </li>
         </nav>
