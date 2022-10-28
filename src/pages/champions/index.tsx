@@ -4,7 +4,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { type } from "os";
 import React, { useEffect, useState } from "react";
-import Home from "../../components/Home/Home";
+import Home from "../../components/Pages/Home/Home";
 import Layout from "../../components/shared/Layout";
 
 interface TChampion {
@@ -44,7 +44,7 @@ const Champions: NextPage<ChampionsProp> = ({ championList }) => {
               >
                 <Image
                   className="w-full h-4/5 relative"
-                  layout="fill"
+                  alt={`${champion.name} icon`}
                   src={`http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/${champion.image?.full}`}
                 />
                 <p className="text-center overflow-ellipsis">{champion.name}</p>
