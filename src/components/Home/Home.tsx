@@ -35,7 +35,7 @@ const Home = ({ openModal, region }: HomeProps) => {
             />
             <Link href="/summoner">
               <button
-                className="bg-zinc-300 dark:bg-primary focus:bg-slate-300 dark:focus:bg-slate-600 font-bold h-5/6 my-auto mr-1 px-6 rounded-md hover:outline  focus:outline focus:outline-2"
+                className="bg-zinc-300 dark:bg-primary focus:bg-slate-300 dark:focus:bg-slate-600 font-bold h-5/6 mr-1 my-1 px-6 rounded-md hover:outline focus:outline focus:outline-2"
                 type="button"
               >
                 Search
