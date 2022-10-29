@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 import Layout from "../../components/shared/Layout";
-import Summoner from "../../components/Summoner/Summoner";
+import Summoner from "../../components/Pages/Summoner/Summoner";
 import { getMatchIDs, getSummonerIDs, getUserRanks } from "../../lib/riotAPI";
 import { ISummonerData, ISummonerIDs, ISummonerRanks } from "../../types/types";
 import { regions } from "../../utils/commonData";
