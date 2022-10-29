@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div className="flex  mx-auto bg-red-200">
+    <div className="mx-auto my-auto">
       <PlayerSearch openModal={openModal} region={region} />
       {showRegionModal && (
         <RegionModal closeModal={closeModal} region={region} />

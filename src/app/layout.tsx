@@ -20,13 +20,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <div className="min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex">
+        <div className="min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex justify-center items-center">
           <Navbar
             isMinimized={false}
             setIsDarkMode={setIsDarkMode}
             isDarkMode={isDarkMode}
           />
-          <div className="w-full">{children}</div>
+          <div className="flex-1 -translate-y-1/2">{children}</div>
         </div>
       </body>
     </html>

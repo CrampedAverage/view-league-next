@@ -10,14 +10,14 @@ const PlayerSearch = ({ openModal, region }: Props) => {
   const [inputFocus, setInputFocus] = useState(false);
 
   return (
-    <div className="text-slate-400 mx-auto my-auto -translate-y-2/4">
+    <div className="text-slate-400">
       <header className="flex-row text-center mb-6">
         <h1 className="text-6xl my-6 font-bold">viewLeague</h1>
         <p className="text-lg italic">viewPlayers, viewChampions, viewBuilds</p>
       </header>
-      <form className="flex h-10 w-96 relative my-6">
+      <form className="flex h-10 w-96 mx-auto my-6">
         <div
-          className={`w-full flex bg-slate-200 rounded-lg h-12 ${
+          className={`mx-auto flex bg-slate-200 rounded-lg h-12 ${
             inputFocus ? "outline" : ""
           }`}
         >
