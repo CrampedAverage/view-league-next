@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ["ddragon.leagueoflegends.com"],
   },
+  experimental: { appDir: true },
 };
 
 module.exports = nextConfig;

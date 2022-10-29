@@ -1,21 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,html}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        "manrope": ["manrope"]
+        manrope: ["manrope"],
       },
       colors: {
         primary: "#0E2736",
         secondary: "#07141C",
-        font: "red-200"
+        font: "red-200",
       },
     },
   },
   plugins: [],
-}
+};
