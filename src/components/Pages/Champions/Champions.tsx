@@ -2,23 +2,23 @@ import Image from "next/image";
 import { TChampion, TChampionList } from "../../../app/champions/page";
 
 interface ChampionsProp {
-  championList: TChampionList;
+  champions: TChampionList;
 }
 
-const Champions = ({ championList }: ChampionsProp) => {
+const Champions = ({ champions }: ChampionsProp) => {
   return (
     <div className="flex-col w-3/4 mx-auto max-h-screen overflow-y-scroll ">
       <p className="text-center text-5xl">Champions</p>
       <p className="text-center text-2xl">click for champion info</p>
       <ul className="flex flex-wrap p-6 justify-center">
-        {Object.values(championList?.data).map((champion: TChampion) => {
+        {Object.values(champions?.data).map((champion: TChampion) => {
           return (
             <li
               className="flex-col w-28 h-28 border-2 border-solid dark:border-primary m-5"
               key={champion.name}
             >
-              <Image
-                className="w-full h-4/5 relative"
+              <img
+                className="w-full h-4/5"
                 width={45}
                 height={45}
                 alt={`icon`}
