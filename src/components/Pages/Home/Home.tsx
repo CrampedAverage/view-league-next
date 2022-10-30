@@ -18,7 +18,7 @@ const Home = () => {
   };
 
   return (
-    <div className="mx-auto my-auto">
+    <div className="-translate-y-1/2">
       <PlayerSearch openModal={openModal} region={region} />
       {showRegionModal && (
         <RegionModal closeModal={closeModal} region={region} />

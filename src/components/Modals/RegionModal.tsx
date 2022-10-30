@@ -12,7 +12,7 @@ const RegionModal = ({ closeModal, region }: RegionModalProps) => {
   const [regionValue, setRegionValue] = useState(region);
 
   return (
-    <Modal closeModal={closeModal}>
+    <Modal closeModal={closeModal} selector="#modal">
       <header className="relative flex text-slate-400 ">
         <h2 className="mx-auto font-bold text-2xl">Regions</h2>
         <button
