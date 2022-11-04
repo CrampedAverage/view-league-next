@@ -6,7 +6,6 @@ const nextConfig = {
     domains: ["ddragon.leagueoflegends.com"],
   },
   experimental: { appDir: true },
-  basePath: "/src",
 };
 
 module.exports = nextConfig;
