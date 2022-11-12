@@ -9,7 +9,7 @@ import { regions } from "../../../utils/commonData";
 
 const Home = () => {
   const [showRegionModal, setShowRegionModal] = useModal(false);
-  const [region, setRegion] = useRegion("euw");
+  const [region, setRegion] = useRegion(Cookies.get("region") || "euw");
 
   const openModal = (open: boolean): void => {
     setShowRegionModal(open);
@@ -19,10 +19,6 @@ const Home = () => {
     if (region) setRegion(region);
     setShowRegionModal(false);
   };
-
-  useEffect(() => {
-    Cookies.set("region", regions[region].value);
-  }, [region]);
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full">
