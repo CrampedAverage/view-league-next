@@ -1,5 +1,3 @@
-import axios from "axios";
-
 // const getSummonerData = async (cookies: NextCookies) => {
 //   // const region = cookies.get("region");
 //   console.log(cookies);
@@ -10,8 +8,8 @@ export default function SummonerPage({
   params,
   searchParams,
 }: {
-  params: { name: string };
-  searchParams: { id: string };
+  params: { region: String };
+  searchParams: { id: String };
 }) {
   return <div>page</div>;
 }

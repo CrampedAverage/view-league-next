@@ -1,5 +1,5 @@
 import axios, { AxiosPromise, AxiosResponse } from "axios";
-import { IContinent, IRegionValue, ISummonerIDs } from "../types/types";
+import { IContinent, IRegionValue, ISummonerIDs } from "../utils/types";
 
 const apiKey = process.env.RIOT_API_KEY;
 

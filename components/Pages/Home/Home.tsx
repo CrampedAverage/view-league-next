@@ -25,7 +25,7 @@ const Home = () => {
   }, [region]);
 
   return (
-    <div className="-translate-y-1/2">
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full">
       <PlayerSearch openModal={openModal} region={region} />
       {showRegionModal && (
         <RegionModal closeModal={closeModal} region={region} />

@@ -1,22 +1,20 @@
-import axios from "axios";
+import { getRequest } from "utils/httpUtil";
 import Champions from "../../components/Pages/Champions/Champions";
 
 export interface TChampion {
-  name: string;
+  name: String;
   image: {
-    full: string;
+    full: String;
   };
 }
 
 export interface TChampionList {
-  data: {
-    [key: string]: TChampion;
-  };
+  [key: string]: TChampion;
 }
 
 const getChampions = async () => {
-  const response = await axios.get("http://127.0.0.1:4040/api/champions");
-  const champions: TChampionList = response.data;
+  const response = await getRequest<TChampionList>({ url: "/champions" });
+  const champions: TChampionList = response;
 
   return champions;
 };

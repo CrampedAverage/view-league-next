@@ -1,5 +1,5 @@
 import React from "react";
-import { ISummonerData } from "../../../types/types";
+import { ISummonerData } from "../../../utils/types";
 
 interface SummonerProps {
   summonerData: ISummonerData;

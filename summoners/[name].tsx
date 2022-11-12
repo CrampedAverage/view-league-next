@@ -6,7 +6,7 @@ import React from "react";
 // import Layout from "../../components/shared/Layout";
 import Summoner from "../components/Pages/Summoner/Summoner";
 import { getMatchIDs, getSummonerIDs, getUserRanks } from "../lib/riotAPI";
-import { ISummonerData, ISummonerIDs, ISummonerRanks } from "../types/types";
+import { ISummonerData, ISummonerIDs, ISummonerRanks } from "../utils/types";
 import { regions } from "../utils/commonData";
 
 interface SummonerPageProps {

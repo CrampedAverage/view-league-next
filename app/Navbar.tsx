@@ -1,9 +1,9 @@
 import React from "react";
 import Link from "next/link";
-// import { GiBarbute } from "react-icons/gi";
-// import { AiTwotoneHome } from "react-icons/ai";
-// import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
-// import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { GiBarbute } from "react-icons/gi";
+import { AiTwotoneHome } from "react-icons/ai";
+import { BsFillSunFill, BsMoonFill } from "react-icons/bs";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 interface NavbarProps {
   isMinimized: boolean;

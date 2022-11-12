@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
 import useDarkMode from "../hooks/useDarkMode";
-import "../styles/output.css";
+import "./globals.css";
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   const [minimiseNav, setMinimiseNav] = useState(false);
@@ -16,7 +16,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <div className="relative min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex justify-center items-center">
+        <div className="relative min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex justify-center ">
           <Navbar
             isMinimized={false}
             setIsDarkMode={setIsDarkMode}

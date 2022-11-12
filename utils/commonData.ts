@@ -1,4 +1,4 @@
-import { IRegions } from "../types/types";
+import { IRegions } from "./types";
 
 export const regions: IRegions = {
   euw: {
