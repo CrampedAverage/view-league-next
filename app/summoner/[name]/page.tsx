@@ -3,7 +3,7 @@ import { regions } from "utils/commonData";
 import { capitaliseWord } from "utils/helpers";
 import { getRequest } from "utils/httpUtil";
 import RankView from "./RankView";
-
+import { cookies } from "next/headers";
 interface TSummonerData {
   info: {
     id: string;
@@ -18,9 +18,12 @@ interface TSummonerData {
   ranks: RankInfo[];
 }
 
-const getSummonerData = async (params: { name: string; region: string }) => {
-  const { region, name } = params;
-  const { continent, value } = regions[region];
+const getSummonerData = async (params: { name: string }) => {
+  const nextCookies = cookies();
+  const { name } = params;
+  const { continent, value } = regions["euw"];
+  const region = nextCookies.get("region")?.value || "euw1";
+  console.log(region);
   const response = await getRequest<TSummonerData>({
     url: "/summoner/get-data",
     data: { summoner_name: name, region: value, continent },
@@ -35,6 +38,7 @@ export default async function SummonerPage({
   params: { name: string; region: string };
   searchParams: { id: string };
 }) {
+  console.log();
   const { info, matches, ranks } = await getSummonerData(params);
   return (
     <div className="">
