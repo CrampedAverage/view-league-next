@@ -24,13 +24,13 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
       <div className="flex p-3  items-center my-8">
         <nav className="text-2xl items-center text-slate-400">
           <li className="flex cursor-pointer my-3">
-            {/* <AiTwotoneHome size={36} /> */}
+            <AiTwotoneHome size={36} />
             <Link href="/" className="px-4 ">
               Home
             </Link>
           </li>
           <li className="flex my-6 cursor-pointer">
-            {/* <GiBarbute size={36} /> */}
+            <GiBarbute size={36} />
             <Link href="/champions" className="px-4">
               Champions
             </Link>
@@ -42,14 +42,14 @@ const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
           onClick={() => setIsDarkMode(!isDarkMode)}
           className="bg-zinc-100 dark:bg-secondary font-bold p-1 mr-auto rounded-md "
         >
-          {/* {isDarkMode ? (
+          {isDarkMode ? (
             <BsMoonFill size={32} color={isDarkMode ? "white" : ""} />
           ) : (
             <BsFillSunFill size={32} color={isDarkMode ? "white" : ""} />
-          )} */}
+          )}
         </button>
         <button className="bg-zinc-100 dark:bg-secondary  font-bold p-1 ml-auto rounded-md ">
-          {/* <FaLongArrowAltLeft size={32} color={isDarkMode ? "white" : ""} /> */}
+          <FaLongArrowAltLeft size={32} color={isDarkMode ? "white" : ""} />
         </button>
       </footer>
     </div>
