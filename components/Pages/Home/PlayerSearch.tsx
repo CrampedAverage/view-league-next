@@ -15,7 +15,7 @@ const PlayerSearch = ({ openModal, region }: Props) => {
   const searchSummoner = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (searchValue.length < 3) return;
-    router.push(`/summoner/${region}/${searchValue}`);
+    router.push(`/summoner/${searchValue}`);
   };
 
   return (
