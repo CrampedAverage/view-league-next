@@ -9,47 +9,62 @@ interface NavbarProps {
   isMinimized: boolean;
   isDarkMode: boolean;
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsMinimized: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Navbar = ({ isMinimized, setIsDarkMode, isDarkMode }: NavbarProps) => {
+const Navbar = ({
+  isMinimized,
+  setIsDarkMode,
+  isDarkMode,
+  setIsMinimized,
+}: NavbarProps) => {
   return (
     <div
       className={`relative ${
-        !isMinimized ? "w-72" : "w-16"
+        isMinimized ? "w-72" : "w-16"
       } min-h-screen bg-gray-200 dark:bg-primary`}
     >
       <div className="text-4xl text-slate-400 font-bold mx-auto my-2 w-fit">
-        viewLeague
+        {isMinimized ? "viewLeague" : "vL"}
       </div>
-      <div className="flex p-3  items-center my-8">
+      <div className="flex p-3  items-center ">
         <nav className="text-2xl items-center text-slate-400">
           <li className="flex cursor-pointer my-3">
             <AiTwotoneHome size={36} />
             <Link href="/" className="px-4 ">
-              Home
+              {isMinimized && "Home"}
             </Link>
           </li>
           <li className="flex my-6 cursor-pointer">
             <GiBarbute size={36} />
             <Link href="/champions" className="px-4">
-              Champions
+              {isMinimized && "Champions"}
             </Link>
           </li>
         </nav>
       </div>
-      <footer className="absolute bottom-2 flex min-w-full content-evenly px-2">
+      <footer
+        className={`absolute bottom-2 flex ${
+          !isMinimized ? "flex-col" : ""
+        } min-w-full content-evenly px-2`}
+      >
         <button
           onClick={() => setIsDarkMode(!isDarkMode)}
-          className="bg-zinc-100 dark:bg-secondary font-bold p-1 mr-auto rounded-md "
+          className={`bg-zinc-100 dark:bg-secondary font-bold rounded-md w-fit p-1 `}
         >
-          {isDarkMode ? (
-            <BsMoonFill size={32} color={isDarkMode ? "white" : ""} />
-          ) : (
-            <BsFillSunFill size={32} color={isDarkMode ? "white" : ""} />
-          )}
+          {isDarkMode ? <BsMoonFill size={32} /> : <BsFillSunFill size={32} />}
         </button>
-        <button className="bg-zinc-100 dark:bg-secondary  font-bold p-1 ml-auto rounded-md ">
-          <FaLongArrowAltLeft size={32} color={isDarkMode ? "white" : ""} />
+        <button
+          onClick={() => setIsMinimized(!isMinimized)}
+          className={`bg-zinc-100 dark:bg-secondary font-bold rounded-md w-fit p-1 ${
+            isMinimized ? "ml-auto" : "mt-4"
+          } `}
+        >
+          {isMinimized ? (
+            <FaLongArrowAltLeft size={32} />
+          ) : (
+            <FaLongArrowAltRight size={32} />
+          )}
         </button>
       </footer>
     </div>

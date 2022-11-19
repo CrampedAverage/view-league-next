@@ -5,7 +5,7 @@ import useDarkMode from "../hooks/useDarkMode";
 import "./globals.css";
 
 function RootLayout({ children }: { children: React.ReactNode }) {
-  const [minimiseNav, setMinimiseNav] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
   const [isDarkMode, setIsDarkMode] = useDarkMode();
 
   return (
@@ -18,9 +18,10 @@ function RootLayout({ children }: { children: React.ReactNode }) {
       <body>
         <div className="relative min-h-screen min-w-screen bg-gray-50 dark:bg-secondary flex justify-center ">
           <Navbar
-            isMinimized={false}
+            isMinimized={isMinimized}
             setIsDarkMode={setIsDarkMode}
             isDarkMode={isDarkMode}
+            setIsMinimized={setIsMinimized}
           />
           <div className="flex-1 relative">
             {children}
