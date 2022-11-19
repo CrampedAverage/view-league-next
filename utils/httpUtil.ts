@@ -19,7 +19,9 @@ export async function getRequest<T>({
     params = "?" + getParams(data);
   }
 
-  const response = await fetch(`${ENDPOINT}/api${url}${params}`);
+  const response = await fetch(`${ENDPOINT}/api${url}${params}`, {
+    cache: "force-cache",
+  });
 
   return response.json();
 }
