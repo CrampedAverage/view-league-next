@@ -18,9 +18,8 @@ export async function getRequest<T>({
   if (data) {
     params = "?" + getParams(data);
   }
-  console.log(params);
+
   const response = await fetch(`${ENDPOINT}/api${url}${params}`);
 
-  // return await response.json();
-  return await response.json();
+  return response.json();
 }

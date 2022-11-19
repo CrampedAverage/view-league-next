@@ -14,31 +14,42 @@ interface TSummonerData {
     revisionDate: number;
     summonerLevel: number;
   };
-  matches: {};
+  match_ids: string[];
   ranks: RankInfo[];
 }
 
 const getSummonerData = async (params: { name: string }) => {
   const nextCookies = cookies();
   const { name } = params;
-  const { continent, value } = regions["euw"];
-  const region = nextCookies.get("region")?.value || "euw1";
-  console.log(region);
-  const response = await getRequest<TSummonerData>({
+  const region = nextCookies.get("region")?.value || "euw";
+
+  const { continent, value } = regions[region];
+
+  const summonerData = await getRequest<TSummonerData>({
     url: "/summoner/get-data",
     data: { summoner_name: name, region: value, continent },
   });
-  return response;
+
+  const { match_ids } = summonerData;
+  const matchPromises = [];
+  for (let id of match_ids) {
+    let promise = getRequest<any>({
+      url: `/match/${continent}/${id}`,
+    });
+    matchPromises.push(promise);
+  }
+  const [...matches] = await Promise.all(matchPromises);
+
+  const { info, ranks } = summonerData;
+  return { info, ranks, matches };
 };
 
 export default async function SummonerPage({
   params,
-  searchParams,
 }: {
   params: { name: string; region: string };
   searchParams: { id: string };
 }) {
-  console.log();
   const { info, matches, ranks } = await getSummonerData(params);
   return (
     <div className="">
