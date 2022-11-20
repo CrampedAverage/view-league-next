@@ -20,31 +20,27 @@ const Navbar = ({
 }: NavbarProps) => {
   return (
     <div
-      className={`relative ${
+      className={`relative min-h-screen ${
         isMinimized ? "w-72" : "w-16"
       } min-h-screen bg-gray-200 dark:bg-primary`}
     >
       <div className="text-4xl text-slate-400 font-bold mx-auto my-2 w-fit">
         {isMinimized ? "viewLeague" : "vL"}
       </div>
-      <div className="flex p-3  items-center ">
+      <div className="flex p-3 items-center ">
         <nav className="text-2xl items-center text-slate-400">
-          <li className="flex cursor-pointer my-3">
+          <Link href="/" className="flex cursor-pointer my-3">
             <AiTwotoneHome size={36} />
-            <Link href="/" className="px-4 ">
-              {isMinimized && "Home"}
-            </Link>
-          </li>
-          <li className="flex my-6 cursor-pointer">
+            <div className="px-4 ">{isMinimized && "Home"}</div>
+          </Link>
+          <Link href="/champions" className="flex my-6 cursor-pointer">
             <GiBarbute size={36} />
-            <Link href="/champions" className="px-4">
-              {isMinimized && "Champions"}
-            </Link>
-          </li>
+            <div className="px-4">{isMinimized && "Champions"}</div>
+          </Link>
         </nav>
       </div>
       <footer
-        className={`absolute bottom-2 flex ${
+        className={`absolute bottom-2 flex  items-center ${
           !isMinimized ? "flex-col" : ""
         } min-w-full content-evenly px-2`}
       >
